@@ -1,13 +1,13 @@
-package br.edu.fiec.gymSystemp2;
+package br.edu.fiec.GymManager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GymSystemp2Application {
+public class GymManagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GymSystemp2Application.class, args);
+		SpringApplication.run(GymManagerApplication.class, args);
 	}
 
 }
