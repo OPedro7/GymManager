@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.edu.fiec</groupId>
-	<artifactId>gymSystemp2</artifactId>
+	<artifactId>GymManager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
@@ -30,13 +30,13 @@
 		<java.version>25</java.version>
 	</properties>
 	<dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,7 +47,6 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>3.0.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -62,7 +61,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-            <version>1.18.46</version>
+			<version>1.18.46</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -106,7 +105,7 @@
 								<path>
 									<groupId>org.projectlombok</groupId>
 									<artifactId>lombok</artifactId>
-                                    <version>1.18.46</version>
+									<version>1.18.46</version>
 								</path>
 							</annotationProcessorPaths>
 						</configuration>
@@ -122,12 +121,17 @@
 								<path>
 									<groupId>org.projectlombok</groupId>
 									<artifactId>lombok</artifactId>
-                                    <version>1.18.46</version>
+									<version>1.18.46</version>
 								</path>
 							</annotationProcessorPaths>
 						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<source>26</source>
+					<target>26</target>
+					<compilerArgs>--enable-preview</compilerArgs>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
