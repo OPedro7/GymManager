@@ -7,20 +7,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlunoDTO {
+public class TreinoDTO {
 
     private Integer id;
 
     private String nome;
 
-    private String sexo;
+    private String grupoMuscular;
 
-    private String email;
+    private String dificuldade;
 
-    private Long telefone;
-
-    private Integer dataNascimento;
-
-    private String objetivo;
-
+    private Integer duracaoMinutos;
 }
