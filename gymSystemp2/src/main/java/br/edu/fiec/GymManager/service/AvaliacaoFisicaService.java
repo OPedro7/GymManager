@@ -4,9 +4,7 @@ import br.edu.fiec.GymManager.model.dto.AvaliacaoFisicaDTO;
 import br.edu.fiec.GymManager.model.entity.AvaliacaoFisica;
 import br.edu.fiec.GymManager.repository.AvaliacaoFisicaRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -20,20 +18,22 @@ public class AvaliacaoFisicaService {
 
     public List<AvaliacaoFisica> buscarAvaliacoes() { return avaliacaoFisicaRepository.findAll(); }
 
-    public AvaliacaoFisica buscarAvaliacaoPorId(Integer id) {
-        return avaliacaoFisicaRepository.findAllById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Avaliação não encontrada"));
-    }
+    public AvaliacaoFisica buscarAvaliacaoPorId(Integer id) { return avaliacaoFisicaRepository.findById(id).get(); }
 
-    public List<AvaliacaoFisica>
+    public List<AvaliacaoFisica> buscarPorAlunoId(Integer alunoId) { return avaliacaoFisicaRepository.findAllByAlunoId(alunoId); }
+
+    public List<AvaliacaoFisica> buscarAvaliacaoObjetivo(String objetivo) { return avaliacaoFisicaRepository.findAllByObjetivo(objetivo); }
+
+    public List<AvaliacaoFisica> buscarPorImc(Double imc) { return avaliacaoFisicaRepository.findAllByImc(imc); }
+
+    public void apagar(Integer id) { avaliacaoFisicaRepository.deleteById(id); }
 
     public AvaliacaoFisica atualizar(Integer id, AvaliacaoFisicaDTO avaliacaoFisicaDTO) {
         AvaliacaoFisica avaliacaoFisica = buscarAvaliacaoPorId(id);
-        avaliacaoFisica.setAlunoId(avaliacaoFisica.getAlunoId());
-        avaliacaoFisica.setAltura(avaliacaoFisicaDTO.getAltura());
+        avaliacaoFisica.setAlunoId(avaliacaoFisicaDTO.getAlunoId());
         avaliacaoFisica.setPeso(avaliacaoFisicaDTO.getPeso());
-        avaliacaoFisica.setIMC(avaliacaoFisicaDTO.getIMC());
-        avaliacaoFisica.setObjetivo(avaliacaoFisica.getObjetivo());
-        return AvaliacaoFisicaDTO.save(avaliacaoFisica);
+        avaliacaoFisica.setAltura(avaliacaoFisicaDTO.getAltura());
+        avaliacaoFisica.setObjetivo(avaliacaoFisicaDTO.getObjetivo());
+        return avaliacaoFisicaRepository.save(avaliacaoFisica);
     }
 }
