@@ -1,6 +1,5 @@
 package br.edu.fiec.GymManager.repository;
 
-import br.edu.fiec.GymManager.model.dto.AvaliacaoFisicaDTO;
 import br.edu.fiec.GymManager.model.entity.AvaliacaoFisica;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
