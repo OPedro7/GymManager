@@ -27,7 +27,7 @@ public class AvaliacaoFisica {
     private double altura;
 
     @Column(nullable = false)
-    private double IMC;
+    private double imc;
 
     @Column(nullable = false)
     private String Objetivo;
@@ -36,7 +36,7 @@ public class AvaliacaoFisica {
         this.alunoId = avaliacaoFisicaDTO.getAlunoId();
         this.peso = avaliacaoFisicaDTO.getPeso();
         this.altura = avaliacaoFisicaDTO.getAltura();
-        this.IMC = avaliacaoFisicaDTO.getIMC();
+        this.imc = avaliacaoFisicaDTO.getIMC();
         this.Objetivo = avaliacaoFisicaDTO.getObjetivo();
     }
 }
