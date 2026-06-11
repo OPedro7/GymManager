@@ -27,7 +27,7 @@ public class TreinoController {
     public List<Treino> buscarTreinos() { return treinoService.buscarTreinos(); }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/id", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "{/id}", produces = APPLICATION_JSON_VALUE)
     public Treino buscarTreinosId(@PathVariable Integer id) {
         return treinoService.buscarTreinoPorId(id);
     }

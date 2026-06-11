@@ -30,13 +30,13 @@ public class AvaliacaoFisica {
     private double imc;
 
     @Column(nullable = false)
-    private String Objetivo;
+    private String objetivo;
 
     public AvaliacaoFisica(AvaliacaoFisicaDTO avaliacaoFisicaDTO) {
         this.alunoId = avaliacaoFisicaDTO.getAlunoId();
         this.peso = avaliacaoFisicaDTO.getPeso();
         this.altura = avaliacaoFisicaDTO.getAltura();
         this.imc = avaliacaoFisicaDTO.getIMC();
-        this.Objetivo = avaliacaoFisicaDTO.getObjetivo();
+        this.objetivo = avaliacaoFisicaDTO.getObjetivo();
     }
 }

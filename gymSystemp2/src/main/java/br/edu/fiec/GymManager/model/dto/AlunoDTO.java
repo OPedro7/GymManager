@@ -19,7 +19,7 @@ public class AlunoDTO {
 
     private Long telefone;
 
-    private Integer dataNascimento;
+    private String dataNascimento;
 
     private String objetivo;
 

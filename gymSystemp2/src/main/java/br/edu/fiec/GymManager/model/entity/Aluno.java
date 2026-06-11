@@ -34,7 +34,7 @@ public class Aluno {
     private Long telefone;
 
     @Column(nullable = false)
-    private Integer dataNascimento;
+    private String dataNascimento;
 
     @Column(nullable = false)
     private String objetivo;
