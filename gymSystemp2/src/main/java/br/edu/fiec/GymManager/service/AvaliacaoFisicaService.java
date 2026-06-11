@@ -40,7 +40,7 @@ public class AvaliacaoFisicaService {
         avaliacaoFisica.setPeso(avaliacaoFisicaDTO.getPeso());
         avaliacaoFisica.setAltura(avaliacaoFisicaDTO.getAltura());
         avaliacaoFisica.setObjetivo(avaliacaoFisicaDTO.getObjetivo());
-        avaliacaoFisica.setImc(avaliacaoFisicaDTO.getIMC());
+        avaliacaoFisica.setImc(calcularImc(avaliacaoFisicaDTO.getPeso(), avaliacaoFisicaDTO.getAltura()));
         return avaliacaoFisicaRepository.save(avaliacaoFisica);
     }
 }
