@@ -22,10 +22,7 @@ public class TreinoService {
 
     public List<Treino> buscarTreinos() { return treinoRepository.findAll(); }
 
-    public Treino buscarTreinoPorId(Integer id) {
-        return treinoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Treino não encontrado"));
-    }
+    public Treino buscarTreinoPorId(Integer id) { return treinoRepository.findById(id).get(); }
 
     public List<Treino> buscarTreinoGrupoMuscular(String grupoMuscular) { return treinoRepository.findAllByGrupoMuscular(grupoMuscular); }
 

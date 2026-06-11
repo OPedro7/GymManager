@@ -4,9 +4,7 @@ import br.edu.fiec.GymManager.model.dto.AlunoDTO;
 import br.edu.fiec.GymManager.model.entity.Aluno;
 import br.edu.fiec.GymManager.repository.AlunoRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -37,8 +35,7 @@ public class AlunosService {
     }
 
     public Aluno buscarAlunoPorId(Integer id) {
-        return alunoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aluno nao encontrado"));
+        return alunoRepository.findById(id).get();
     }
 
     public List<Aluno> buscarTodosAlunosPorNome(String nome) {
