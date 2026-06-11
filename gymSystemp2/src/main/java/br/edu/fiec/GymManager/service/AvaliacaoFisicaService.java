@@ -14,7 +14,13 @@ public class AvaliacaoFisicaService {
 
     private final AvaliacaoFisicaRepository avaliacaoFisicaRepository;
 
-    public void criarAvaliacao(AvaliacaoFisicaDTO avaliacaoFisicaDTO) { avaliacaoFisicaRepository.save(new AvaliacaoFisica(avaliacaoFisicaDTO)); }
+    public void criarAvaliacao(AvaliacaoFisicaDTO avaliacaoFisicaDTO) {
+        double imc = calcularImc(avaliacaoFisicaDTO.getPeso(), avaliacaoFisicaDTO.getAltura());
+        avaliacaoFisicaDTO.setIMC(imc);
+        avaliacaoFisicaRepository.save(new AvaliacaoFisica(avaliacaoFisicaDTO));
+    }
+
+    private double calcularImc(double peso, double altura) { return peso / (altura * altura); }
 
     public List<AvaliacaoFisica> buscarAvaliacoes() { return avaliacaoFisicaRepository.findAll(); }
 
