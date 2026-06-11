@@ -51,7 +51,7 @@ public class TreinoController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "{/id}")
     public void apagar(@PathVariable Integer id) { treinoService.apagar(id); }
 
     @ResponseStatus(HttpStatus.OK)
